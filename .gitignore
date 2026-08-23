@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+build/
+bin/
+out/
+
+# IDEs (IntelliJ IDEA, Eclipse, VS Code)
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+
+# Betriebssysteme
+.DS_Store
+Thumbs.db
+
+# Log-Dateien und temporäre Daten
+logs/
+run/
+crash-reports/
+debug/
+
+# Lokale Gradle-Eigenschaften (falls vorhanden)
+gradle.properties
