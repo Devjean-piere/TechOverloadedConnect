@@ -9,6 +9,7 @@ public class ModCreativTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MOD_CREATIV_TAB = ModRegister.TABS.register("mod_creativ_tab", ()->
             CreativeModeTab.
                     builder()
+                    .icon(ModItems.LAVA_BOWL::asStack)
                     .build());
     public static void register(IEventBus iEventBus) {
         ModRegister.TABS.register(iEventBus);
