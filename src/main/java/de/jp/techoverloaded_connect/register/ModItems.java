@@ -25,9 +25,6 @@ public class ModItems {
             .burnTime(6400)
             .register();
 
-    public static final ItemEntry<PanelBlockItem> JS_GAUGE = REGISTRATE.item("js_gauge", props -> new PanelBlockItem(ModPanels.JS::get, props))
-            .tab(ModCreativTabs.MOD_CREATIV_TAB.getKey())
-            .register();
 
     public static void register() {
     }

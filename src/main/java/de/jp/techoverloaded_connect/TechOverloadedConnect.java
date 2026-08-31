@@ -114,73 +114,7 @@ public class TechOverloadedConnect {
     private void onRegisterCommands(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
 
-        dispatcher.register(
-                Commands.literal("techoverload")
-                        .then(Commands.literal("test")
-                                .then(Commands.literal("item")
-                                        .then(Commands.literal("mainhand")
-                                                // /techoverload test item mainhand tag
-                                                .then(Commands.literal("tag")
-                                                        .executes(context -> {
-                                                            CommandSourceStack source = context.getSource();
-                                                            ServerPlayer player = source.getPlayerOrException();
-                                                            ItemStack stack = player.getMainHandItem();
 
-                                                            if (stack.isEmpty()) {
-                                                                source.sendFailure(Component.literal("You Hand Is Empty!"));
-                                                                return 0;
-                                                            }
-
-                                                            source.sendSuccess(() -> Component.literal("--- Tags für Item ---"), false);
-                                                            stack.getTags().forEach(tagKey ->
-                                                                    source.sendSuccess(() -> Component.literal("- " + tagKey.location()), false)
-                                                            );
-
-                                                            return 1;
-                                                        })
-                                                )
-                                                // /techoverload test item mainhand data_map
-                                                .then(Commands.literal("data_map")
-                                                        .executes(context -> {
-                                                            CommandSourceStack source = context.getSource();
-                                                            ServerPlayer player = source.getPlayerOrException();
-                                                            ItemStack stack = player.getMainHandItem();
-
-                                                            if (stack.isEmpty()) {
-                                                                source.sendFailure(Component.literal("You Hand is Empty!"));
-                                                                return 0;
-                                                            }
-
-                                                            source.sendSuccess(() -> Component.literal("--- DataMaps für Item ---"), false);
-
-                                                            var holder = stack.getItem().builtInRegistryHolder();
-                                                            boolean found = false;
-
-                                                            // 1. Regular Blaze Burner Fuel prüfen
-                                                            var regularFuel = holder.getData(CreateDataMaps.REGULAR_BLAZE_BURNER_FUELS);
-                                                            if (regularFuel != null) {
-                                                                source.sendSuccess(() -> Component.literal("- regular_blaze_burner_fuels -> burnTime: " + regularFuel.burnTime()), false);
-                                                                found = true;
-                                                            }
-
-                                                            // 2. Superheated Blaze Burner Fuel prüfen (Das, was du für deine lava_bowl brauchst!)
-                                                            var superheatedFuel = holder.getData(CreateDataMaps.SUPERHEATED_BLAZE_BURNER_FUELS);
-                                                            if (superheatedFuel != null) {
-                                                                source.sendSuccess(() -> Component.literal("- superheated_blaze_burner_fuels -> burnTime: " + superheatedFuel.burnTime()), false);
-                                                                found = true;
-                                                            }
-
-                                                            if (!found) {
-                                                                source.sendSuccess(() -> Component.literal("Keine Create-Blaze-Burner-DataMaps für dieses Item gefunden, jp!"), false);
-                                                            }
-
-                                                            return 1;
-                                                        })
-                                                )
-                                        )
-                                )
-                        )
-        );
     }
     public static TechOverloadConnectedRegistrate registrate() {
         return REGISTRATE;

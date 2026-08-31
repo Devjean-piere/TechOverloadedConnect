@@ -15,6 +15,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        createPanel(this, ModItems.JS_GAUGE.asItem());
+        createPanel(this, ModItems.NODE_GAUGE.asItem());
     }
 }

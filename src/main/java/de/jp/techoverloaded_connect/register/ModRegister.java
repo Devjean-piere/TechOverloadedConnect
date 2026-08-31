@@ -14,7 +14,6 @@ public class ModRegister {
     public static final DeferredRegister<PanelType<?>> PANELS = DeferredRegister.create(DeployerRegistries.PANEL, TechOverloadedConnect.MODID);
     public static void register(IEventBus iEventBus) {
         ModCreativTabs.register(iEventBus);
-        ModPanels.register(iEventBus);
         ModBlocks.register();
         ModItems.register();
     }
