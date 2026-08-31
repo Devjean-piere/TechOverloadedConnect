@@ -5,6 +5,8 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import com.tterrag.registrate.util.entry.ItemEntry;
+import net.liukrast.deployer.lib.logistics.board.PanelBlockItem;
 import org.jetbrains.annotations.Nullable;
 
 import com.simibubi.create.api.registrate.CreateRegistrateRegistrationCallback;
@@ -83,4 +85,6 @@ public class TechOverloadConnectedRegistrate extends AbstractRegistrate<TechOver
 
         return entry;
     }
+
+
 }
