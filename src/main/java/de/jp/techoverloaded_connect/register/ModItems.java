@@ -6,7 +6,6 @@ import com.simibubi.create.api.registry.CreateDataMaps;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import de.jp.techoverloaded_connect.TechOverloadedConnect;
 import de.jp.techoverloaded_connect.interfaces.TechOverloadConnectedRegistrate;
-import net.liukrast.deployer.lib.logistics.board.PanelBlockItem;
 import net.minecraft.world.item.Item;
 
 public class ModItems {
