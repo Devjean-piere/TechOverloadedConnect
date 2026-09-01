@@ -2,7 +2,7 @@ package de.jp.techoverloaded_connect.register;
 
 import de.jp.techoverloaded_connect.TechOverloadedConnect;
 import de.jp.techoverloaded_connect.interfaces.TechOverloadConnectedRegistrate;
-import net.neoforged.bus.api.IEventBus;
+
 
 public class ModBlocks {
 
@@ -10,6 +10,7 @@ public class ModBlocks {
     static {
         REGISTRATE.setCreativeTab(ModCreativTabs.MOD_CREATIV_TAB);
     }
+
     public static void register() {
 
     }
